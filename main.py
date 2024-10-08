@@ -9,11 +9,12 @@ answer_route = input('In the shadows of Gotham, the user encounters a weary Batm
                      ' Will you take up the mantle?" As the weight of his request hangs in the air, the user feels the /n'
                      ' gravity of the choice ahead. Will they accept the challenge and become the next Batman, or will /n'
                      'they turn away from destiny? The fate of Gotham teeters on the edge of their decision.(enter y/n)')
-### code for typecasting
-while answer_route != 'y' or answer_route != 'n':
+
+answer_route = answer_route.lower().strip()
+while not answer_route == 'y' or answer_route == 'n':
     print('invalid answer')
-    ### code for typecasting
-    answer_route = input('Enter y/n')
+    answer_route = input('(Enter y/n)')
+    answer_route = answer_route.lower().strip()
 
 if answer_route == 'n':
 
@@ -39,15 +40,47 @@ if answer_route == 'n':
 
 print('After the user agrees to help, Batman quickly leads them to a hidden lair, away from the Joker’s reach. /n'
       'Once inside, he begins to lay out a training plan. "You’ll need to master essential skills if you’re going /n'
-      'to protect Gotham," he explains, gesturing to a list of abilities. "You can choose one main skill and two /n'
-      'other skills from the following: /n'
-      '1. Combat Techniques /n'
-      '2.	Strength /n'
-      '3.	Speed /n'
-      '4.	Technology /n'
-      '5.	Detective Abilities /n'
-      '6.	Agility /n'
-      '7.	Stealth /n'
-      '8.	Escape Techniques')
+      'to protect Gotham," he explains, gesturing to a list of abilities. "You can choose one main category of skill and /n'
+      'two other skills from the following: /n'
+      '1.   combat  /n'
+      '2.	strength /n'
+      '3.	speed /n'
+      '4.	technology /n'
+      '5.	detective  /n'
+      '6.	agility /n'
+      '7.	stealth /n'
+      '8.   escape ')
 
 
+primary = input('Choose your main technique')
+primary = primary.lower().strip()
+while not primary == 'strength' or 'speed' or 'technology' or 'detective' or 'agility' or 'stealth' or 'escape':
+    print ('invalid')
+    primary = input('Choose your main technique')
+    primary = primary.lower().strip()
+
+secondary = input('Choose your secondary technique')
+secondary = secondary.lower().strip()
+while not secondary == 'strength' or 'speed' or 'technology' or 'detective' or 'agility' or 'stealth' or 'escape':
+    print('invalid')
+    secondary = input('Choose your secondary technique')
+    secondary = secondary.lower().strip()
+
+tertiary = input('Choose your tertiary  technique')
+secondary = secondary.lower().strip()
+while not tertiary == 'strength' or 'speed' or 'technology' or 'detective' or 'agility' or 'stealth' or 'escape':
+    print('invalid')
+    tertiary = input('Choose your tertiary technique')
+    secondary = secondary.lower().strip()
+'combat' == 10
+'strength' == 5
+'speed' == 5
+'technology' == 10
+'detective' == 3
+'agility' == 5
+'stealth' == 7
+'escape' == 7
+
+level = primary * (math.pow(secondary + tertiary),2)
+
+print (level)

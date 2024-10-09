@@ -174,7 +174,7 @@ if alive == 1:
                   'The user stands there, heart racing, with the Joker at their mercy. They must now decide: Will they\n'
                   'deliver justice and take him in, or will they embrace a darker path and enact their own form of \n'
                   'vengeance? The choice could shape the future of Gotham. What will they do?')
-            path = (input('choose (live/die)')
+            path = (input('choose (live/die)  '))
             path = path.lower().strip()
             if path == 'die':
                 print('The ripple effects would be immense. Gotham’s crime rate skyrockets, with a surge of chaos as\n'
@@ -216,3 +216,4 @@ if alive == 1:
 
 
 
+        print('your level is : ',level)

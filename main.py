@@ -35,12 +35,12 @@ if answer_route == 'n':
         route_time =input('(how many seconds do you plan to live)')
 
     route_time = int(route_time)
-    if route_time > 0:
-        print('Joker does not listen to your answer and you die./n'
+    if route_time > 1:
+        print('Joker does not listen to your answer and you die.\n'
               'Loser ')
 
-    elif route_time < 0:
-        print('Joker laughed at you and you die./n'
+    elif route_time < 1:
+        print('Joker laughed at you and you die.\n'
               'Loser ')
     else:
         print('\n'

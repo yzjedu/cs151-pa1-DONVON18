@@ -1,9 +1,12 @@
 # Code goes # assigning the input for list name
+# Programmer:Donovan Raymond
 
-import sys
+# Course:  Computer Sci through Programming (CS_151_05_06)
+# Due Date: Oct 9,2024
+# Lab Assignment: CS151 PA 1
 import math
 
-
+## sets up the background
 answer_route = input('In the shadows of Gotham, the user encounters a weary Batman, barely standing after a fierce \n'
                      'battle with the Joker. Bloodied and exhausted, Batman locks eyes with the user, a flicker of\n'
                      ' hope shining through his pain."I can’t keep fighting forever. Gotham needs a new hero.\n'
@@ -11,13 +14,13 @@ answer_route = input('In the shadows of Gotham, the user encounters a weary Batm
                      ' gravity of the choice ahead. Will they accept the challenge and become the next Batman, or will \n'
                      'they turn away from destiny? The fate of Gotham teeters on the edge of their decision.(enter y/n)  ')
 alive = 0
-
+## tests if answer is valid
 answer_route = answer_route.lower().strip()
 while not (answer_route == 'y' or answer_route == 'n'):
     print('invalid answer')
     answer_route = input('(Enter y/n)')
     answer_route = answer_route.lower().strip()
-
+## decides the route
 if answer_route == 'n':
     alive = 0
 elif answer_route == 'y':
@@ -30,10 +33,11 @@ if answer_route == 'n':
                      'friend  for me to play with after he retires but if your not going to take his offer I guess \n'
                      'I might as well get rid of you both for good. How many seconds of a head start do you think I \n'
                      'should give you.” (how many seconds do you plan to live)  ')
+    ## test to see if input is valid
     while not route_time.isdigit():
         print('try again')
-        route_time =input('(how many seconds do you plan to live)')
-
+        route_time =input('(how many seconds do you plan to live)'
+## DECIDES THE NEXT ROUTE
     route_time = int(route_time)
     if route_time > 1:
         print('Joker does not listen to your answer and you die.\n'
@@ -49,7 +53,7 @@ if answer_route == 'n':
               'Alfred saves you and batman at the last second while sacrificing his life. In gratitude for the \n'
               'sacrifice of Alfred, you work with Batman to save Gotham and eventually defeat Joker. ')
         alive = 1
-
+## route 1 asks for skills
 if alive == 1:
         print('After the user agrees to help, Batman quickly leads them to a hidden lair, away from the Jokers reach.\n'
         'Once inside, he begins to lay out a training plan. "You’ll need to master essential skills if you’re going \n'
@@ -67,7 +71,7 @@ if alive == 1:
               '\n'
               '\n')
 
-
+# decides main skill is valid and saves it as an integer
         primary = input('Choose your main technique (input the number on the list. For example ,1, for combat) ')
         primary = primary.strip()
 
@@ -83,6 +87,7 @@ if alive == 1:
             primary = input('Choose your main technique (input the number on the list. For example ,1, for combat) ')
             primary = primary.strip()
 
+# decides secondary skill is valid and saves it as an integer
         secondary = input('Choose your secondary technique ')
         secondary = secondary.strip()
 
@@ -98,6 +103,7 @@ if alive == 1:
             secondary = input('Choose your secondary technique (input the number on the list. For example ,1, for combat)  ')
             secondary = secondary.strip()
 
+# decides tertiary skill is valid and saves it as an integer
         tertiary = input('Choose your tertiary  technique ')
         tertiary = tertiary.strip()
         while True:
@@ -112,6 +118,7 @@ if alive == 1:
             tertiary = input('Choose your tertiary technique (input the number on the list. For example ,1, for combat) ')
             tertiary = tertiary.strip()
 
+# decides months is valid and saves it as an integer
         months = input('After deciding what you want to learn Batman asks you how long you want to train befor going to\n'
                        'hunt down joker. Choose how long you want to train in months?(choose a number between 6 and 24) ')
         months = months.strip()
@@ -128,7 +135,7 @@ if alive == 1:
                     print('invalid')
             months = input('Choose how long you want to train in months?(choose a number between 6 and 24) ')
             months = months.strip()
-
+# reassigns variables values
         if primary == 1 or primary == 4:
             primary = 10
         elif primary == 7 or primary == 8:
@@ -156,13 +163,9 @@ if alive == 1:
         elif tertiary == 5:
             tertiary = 3
 
+# uses a personal equation to calculate level
         level = primary * math.pow((secondary + tertiary), months)
-        print(primary)
-        print(secondary)
-        print(tertiary)
-        print(months)
-
-        print(level)
+# decides if The New Batman defeats Joker
         if level >= 3000000:
             print('After months of rigorous training under Batmans guidance, the user feels ready for their ultimate \n'
                   'test. Equipped with newfound skills, they confront the Joker in an epic showdown.\n'
@@ -176,6 +179,7 @@ if alive == 1:
                   'vengeance? The choice could shape the future of Gotham. What will they do?')
             path = (input('choose (live/die)  '))
             path = path.lower().strip()
+# decides what Batman does with Joker if he does defeat him and the aftermath of that decision
             if path == 'die':
                 print('The ripple effects would be immense. Gotham’s crime rate skyrockets, with a surge of chaos as\n'
                       'rival criminals vie for power in the Joker’s absence. This power vacuum leads to more violence,\n'
@@ -200,6 +204,9 @@ if alive == 1:
                       'As the user reflects on their journey, they realize that their choice to uphold justice not \n'
                       'only changed their own life but also sparked a movement that would resonate throughout the \n'
                       'world. Gotham is safer, and the legacy of the Dark Knight lives on, inspiring future generations')
+            else:
+                print('nevermind you lose')
+
         if 3000000 >= level >=1500000:
             print('When the time comes to face the Joker, the battle is fierce.\n'
                   'With the skills they acquired, the user fights valiantly but ultimately finds themselves outmatched.\n'
@@ -215,5 +222,5 @@ if alive == 1:
             print('You died. Badly')
 
 
-
+# outputs final power level
         print('your level is : ',level)
